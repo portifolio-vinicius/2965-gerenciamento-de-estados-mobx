@@ -10,6 +10,17 @@ import '../components/search_input.dart';
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
 
+  // por que usar usar TextEditingController em vez de criar um proprio?? qual o trade-off?
+  //usar o TextEditingController é mais fácil e rápido, pois ele já tem métodos prontos para limpar o campo de busca, e para usar a validação do campo de busca,
+  //caso queira implementar uma validação futura, enquanto criar um proprio controller seria mais trabalhoso e exigiria mais código,
+  //além de não ter os métodos prontos para limpar o campo de busca e para usar a validação do campo de busca, caso queira implementar uma validação futura
+
+  // como funciona                 child: SearchInput(searchTextController: searchTextController)), na pratica?
+  //
+  //o SearchInput é um widget que recebe o searchTextController como parâmetro, e o searchTextController
+  //é usado para controlar o campo de busca, ou seja, para limpar o campo de busca quando o usuário clicar
+  //no botão de limpar, e para usar a validação do campo de busca, caso queira implementar uma validação futura
+
   final TextEditingController searchTextController = TextEditingController();
 
   @override

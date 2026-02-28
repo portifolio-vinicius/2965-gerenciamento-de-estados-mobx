@@ -17,6 +17,9 @@ class Checkout extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(16.0),
+
+          // por que usar CustomScrollView? para usar os slivers, que são otimizados para listas grandes, e para usar o SliverFillRemaining,
+          // que é usado para colocar o botão de pedir no final da tela, mesmo que a lista seja pequena
           child: CustomScrollView(
             slivers: <Widget>[
               const SliverToBoxAdapter(
@@ -67,9 +70,9 @@ class Checkout extends StatelessWidget {
                           foregroundColor: Colors.white,
                           backgroundColor:
                               Theme.of(context).colorScheme.surfaceTint),
-                      child: Row(
+                      child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
+                          children: <Widget>[
                             Padding(
                               padding: EdgeInsets.only(right: 8.0),
                               child: Icon(Icons.account_balance_wallet),
