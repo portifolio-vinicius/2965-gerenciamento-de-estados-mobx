@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug (dispositivo físico USB)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "I7G67D9PZ97DLFRK",
+      "program": "lib/main.dart",
+      "flutterMode": "debug"
+    }
+  ]
+}
