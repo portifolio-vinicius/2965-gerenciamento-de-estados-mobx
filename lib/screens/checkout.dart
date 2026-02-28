@@ -11,7 +11,8 @@ class Checkout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarrinhoStore carrinhoStore = Provider.of<CarrinhoStore>(homeContext, listen: false);
+    final CarrinhoStore carrinhoStore =
+        Provider.of<CarrinhoStore>(homeContext, listen: false);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -29,9 +30,8 @@ class Checkout extends StatelessWidget {
               ),
               SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
-                    return OrderItem(item: carrinhoStore.listaItem[index]);
-                  },
-                      childCount: carrinhoStore.listaItem.length)),
+                return OrderItem(item: carrinhoStore.listaItem[index]);
+              }, childCount: carrinhoStore.listaItem.length)),
               const SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
@@ -53,7 +53,9 @@ class Checkout extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverToBoxAdapter(child: PaymentTotal(total: carrinhoStore.totalDaCompra),),
+              SliverToBoxAdapter(
+                child: PaymentTotal(total: carrinhoStore.totalDaCompra),
+              ),
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Align(
@@ -63,7 +65,8 @@ class Checkout extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           elevation: 0,
                           foregroundColor: Colors.white,
-                          backgroundColor: Theme.of(context).colorScheme.surfaceTint),
+                          backgroundColor:
+                              Theme.of(context).colorScheme.surfaceTint),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const <Widget>[

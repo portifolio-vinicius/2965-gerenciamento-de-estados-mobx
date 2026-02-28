@@ -7,6 +7,7 @@ part 'carrinho_store.g.dart';
 class CarrinhoStore = _CarrinhoStore with _$CarrinhoStore;
 
 abstract class _CarrinhoStore with Store {
+  // atribuicoes do observavel
   @observable
   List<Item> listaItem = ObservableList<Item>();
 
@@ -18,6 +19,8 @@ abstract class _CarrinhoStore with Store {
 
   @computed
   bool get listaVazia => listaItem.isEmpty;
+
+  // acoes qeu modificam os observaveis
 
   @action
   void adicionaCarrinho(Item item) {
@@ -34,7 +37,7 @@ abstract class _CarrinhoStore with Store {
   @action
   void atualizaTotalDaCompra() {
     totalDaCompra = 0;
-    for(var i = 0; i < listaItem.length; i++){
+    for (var i = 0; i < listaItem.length; i++) {
       totalDaCompra += listaItem[i].preco;
     }
   }
